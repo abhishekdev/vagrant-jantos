@@ -6,12 +6,11 @@ Java Ant Node Tomcat Oracle Subversion on CentOS using [Vagrant](http://www.vagr
 
 
 ## Default Add-ons:
-----------------------
-- Subversion: 1.8.9 || WanDisco Latest
+- Subversion: latest (v1.8.9+)
+- Node.js: latest (v0.10.26+)
 
 
 ## Instructions:
-----------------
 * Install VirtualBox from [virtualbox.org](https://www.virtualbox.org)
 * Install Vagrant from [vagrantup.com](http://www.vagrantup.com)
 * [Optional] Tweak configurations in */Vagrantfile*, */puppet/manifests/base.pp*
@@ -19,9 +18,9 @@ Java Ant Node Tomcat Oracle Subversion on CentOS using [Vagrant](http://www.vagr
 
 
 ### TODO:
-- [ ] Host Vagrant box on a file Server
+- [x] Host Vagrant box on a file Server
 - [x] Add SVN Support
-- [ ] Add Node Support
+- [x] Add Node Support
 - [ ] Add Java Support
 - [ ] Add Tomcat Support
 - [ ] Add Ant Support

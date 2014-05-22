@@ -6,6 +6,9 @@ node jantos{
 	# -- Install SVN
 	include subversion::client
 
+	# -- Install Node.js
+	include nodejs::platform
+
 	# Turn off iptables (or any other Firewall)
 	service { iptables:
 		enable    => false,
