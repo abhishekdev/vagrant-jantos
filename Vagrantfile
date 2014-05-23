@@ -25,6 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -80,7 +81,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifest_file  = "base.pp"
     puppet.options        = "--verbose"
     puppet.facter = {
-      "install_src_jdk6" => "/vagrant/tools/install/java/jdk-6u45-linux-x64-rpm.bin"
+      "dev_bin"             => "/vagrant/bin",
+      "dev_installer_path"  => "/vagrant/tools/install",
+      "install_src_jdk6"    => "/vagrant/tools/install/java/jdk-6u45-linux-x64-rpm.bin",
+      "tomcatversion"       => "7",
     }
   end
 

@@ -12,6 +12,11 @@ node jantos{
 	# -- Install JDK6
 	include java::jdk6
 
+	# -- Install Tomcat
+	include apache::tomcat
+
+	Class['java::jdk6'] -> Class['apache::tomcat']
+
 	# Turn off iptables (or any other Firewall)
 	service { iptables:
 		enable    => false,

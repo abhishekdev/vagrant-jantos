@@ -10,6 +10,8 @@ Java Ant Node Tomcat Oracle Subversion on CentOS using [Vagrant](http://www.vagr
 - Node.js: latest (v0.10.26+)
 - Java
 	- JDK 6 update 45
+- Tomcat
+	- Tomcat 7.0.53
 
 
 ## Requirements
@@ -42,7 +44,7 @@ Java Ant Node Tomcat Oracle Subversion on CentOS using [Vagrant](http://www.vagr
 - [x] Host Vagrant box on a file Server
 - [x] Add SVN Support
 - [x] Add Node Support
-- [ ] Add Java Support
-- [ ] Add Tomcat Support
+- [x] Add Java Support
+- [x] Add Tomcat Support
 - [ ] Add Ant Support
 - [ ] Add Oracle Support
