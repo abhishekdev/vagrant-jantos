@@ -9,6 +9,9 @@ node jantos{
 	# -- Install Node.js
 	include nodejs::platform
 
+	# -- Install JDK6
+	include java::jdk6
+
 	# Turn off iptables (or any other Firewall)
 	service { iptables:
 		enable    => false,

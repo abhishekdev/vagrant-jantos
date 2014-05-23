@@ -79,6 +79,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifests_path = "puppet/manifests"
     puppet.manifest_file  = "base.pp"
     puppet.options        = "--verbose"
+    puppet.facter = {
+      "install_src_jdk6" => "/vagrant/tools/install/java/jdk-6u45-linux-x64-rpm.bin"
+    }
   end
 
 end
