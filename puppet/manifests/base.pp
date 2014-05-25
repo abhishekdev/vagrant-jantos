@@ -3,6 +3,17 @@
 # @date 14-May-2014
 
 node jantos{
+	file{ ["$directory_install", "$directory_bin"]:
+		ensure => 'directory',
+	}
+
+	# Turn off iptables (or any other Firewall)
+	service { iptables:
+		enable    => false,
+		ensure    => false,
+		hasstatus => true,
+	}
+
 	# -- Install SVN
 	include subversion::client
 
@@ -13,14 +24,10 @@ node jantos{
 	include java::jdk6
 
 	# -- Install Tomcat
+	Class['java::jdk6'] -> Class['apache::tomcat']
 	include apache::tomcat
 
-	Class['java::jdk6'] -> Class['apache::tomcat']
-
-	# Turn off iptables (or any other Firewall)
-	service { iptables:
-		enable    => false,
-		ensure    => false,
-		hasstatus => true,
-	}
+	# -- Install Ant
+	Class['java::jdk6'] -> Class['apache::ant']
+	include apache::ant
 }

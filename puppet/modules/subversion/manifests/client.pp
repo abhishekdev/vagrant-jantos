@@ -11,6 +11,6 @@ class subversion::client {
 	}
 
 	package{ "subversion":
-		ensure => 'latest',
+		ensure => $v_subversion,
 	}
 }

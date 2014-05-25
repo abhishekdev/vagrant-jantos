@@ -4,29 +4,24 @@
 
 class apache::tomcat {
 
-	$installerSource = $tomcatversion ? { 
-		'7' => ["http://www.eu.apache.org/dist/tomcat/tomcat-7/v7.0.53/bin/apache-tomcat-7.0.53.tar.gz"], 
-		'8' => ["http://mirror.tcpdiag.net/apache/tomcat/tomcat-8/v8.0.8/bin/apache-tomcat-8.0.8.tar.gz"], 
+	$installerSource = $v_tomcat ? { 
+		'7' => ["http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.53/bin/apache-tomcat-7.0.53.tar.gz"], 
+		'8' => ["http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.8/bin/apache-tomcat-8.0.8.tar.gz"], 
 		'default' => 'NA',
 	}
 
-	$base_name = $tomcatversion ? { 
+	$base_name = $v_tomcat ? { 
 		'7' => "apache-tomcat-7.0.53", 
 		'8' => "apache-tomcat-8.0.8", 
 		'default' => 'NA',
 	}
 
-	file { "${dev_installer_path}/tomcat/":
+	file { "${directory_install}/tomcat/":
 		ensure => directory,
 		before => Exec["Fetch Tomcat Installer"],
 	}
 
-	file { $dev_bin:
-		ensure => directory,
-		before => Exec["Install Tomcat"],
-	}
-
-	file { "${dev_installer_path}/tomcat/${base_name}.tar.gz":
+	file { "${directory_install}/tomcat/${base_name}.tar.gz":
 		ensure  => 'present',
 		owner   => 'vagrant',
 		before => Exec["Install Tomcat"],
@@ -34,23 +29,23 @@ class apache::tomcat {
 	}
 
 	exec{ "Fetch Tomcat Installer":
-		command => "/usr/bin/wget $installerSource -O ${dev_installer_path}/tomcat/${base_name}.tar.gz",
+		command => "/usr/bin/wget $installerSource -O ${directory_install}/tomcat/${base_name}.tar.gz",
 	    user => root,
 	    path => '/bin',
-	    creates => "${dev_installer_path}/tomcat/${base_name}.tar.gz",
+	    creates => "${directory_install}/tomcat/${base_name}.tar.gz",
 	}
 
 	exec{ "Install Tomcat":
-		command => "tar xzf ${dev_installer_path}/tomcat/${base_name}.tar.gz -C ${dev_bin} && /bin/mv ${dev_bin}/${base_name} ${dev_bin}/tomcat",
+		command => "tar xzf ${directory_install}/tomcat/${base_name}.tar.gz -C ${directory_bin} && /bin/mv ${directory_bin}/${base_name} ${directory_bin}/tomcat",
 	    user => root,
 	    path => ["/bin"],
-	    creates => "${dev_bin}/tomcat",
+	    creates => "${directory_bin}/tomcat",
 	}
 
 	exec { "Set CATALINA_HOME":
-		command => "echo export CATALINA_HOME=\"${dev_bin}/tomcat\" >> ~/.bash_profile",
+		command => "echo export CATALINA_HOME=\"${directory_bin}/tomcat\" >> ~/.bash_profile",
 		user => vagrant,
-		unless => "echo $CATALINA_HOME | grep -c \"${dev_bin}/tomcat\"",
+		unless => "echo $CATALINA_HOME | grep -c \"${directory_bin}/tomcat\"",
 		path => ["/bin"],
 		require => Exec["Install Tomcat"],
 	}

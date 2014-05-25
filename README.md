@@ -21,7 +21,7 @@ Java Ant Node Tomcat Oracle Subversion on CentOS using [Vagrant](http://www.vagr
 * If JDK6 needs to be installed
 	
 	- Download Sun Java JDK 6 ( update 45 ) from [here](http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR). Use the jdk-6u*-linux-x64-rpm.bin file.
-	- Put it in the folder `[projectroot]/tools/install/java/` (Create directories if required)
+	- Put it in the folder `[projectroot]/install/java/` (Create directories if required)
 	
 * For Windows Hosts:
 	- Ensure that you have VirtualBox directory in your `%PATH%`. Usually `Program Files\Oracle\VirtualBox` for deafult installs
@@ -55,5 +55,5 @@ Username: vagrant
 - [x] Add Node Support
 - [x] Add Java Support
 - [x] Add Tomcat Support
-- [ ] Add Ant Support
+- [x] Add Ant Support
 - [ ] Add Oracle Support

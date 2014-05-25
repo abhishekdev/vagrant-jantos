@@ -19,7 +19,7 @@ class nodejs::platform {
 	}
 
 	package { "nodejs":
-		ensure => 'present',
+		ensure => $v_node,
 	}
 
 	package { "npm":

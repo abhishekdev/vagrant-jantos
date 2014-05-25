@@ -16,6 +16,10 @@ class java::jdk6 {
 	#     creates => $install_src_jdk6
 	# }
 
+	if $v_jdk == "6" {
+		$install_src_jdk6 = "${directory_install}/java/jdk-6u45-linux-x64-rpm.bin"
+	}
+
 	file { $install_src_jdk6:
 	    ensure => 'present',
 	    mode   => '0777',

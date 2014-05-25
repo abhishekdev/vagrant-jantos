@@ -81,10 +81,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifest_file  = "base.pp"
     puppet.options        = "--verbose"
     puppet.facter = {
-      "dev_bin"             => "/vagrant/bin",
-      "dev_installer_path"  => "/vagrant/tools/install",
-      "install_src_jdk6"    => "/vagrant/tools/install/java/jdk-6u45-linux-x64-rpm.bin",
-      "tomcatversion"       => "7",
+      "directory_bin"       => "/vagrant/bin",
+      "directory_install"   => "/vagrant/install",
+
+      # Set package versions. Some packages use OS package managers, 
+      # while some are configures manually. Supported version values 
+      # for packages which do not use OS package managers are listed below:
+      #  - Java [6] 
+      #  - Ant [1.6, 1.7, 1.8, 1.9]
+      #  - Tomcat [7, 8]
+      "v_jdk"         => "6",  
+      "v_ant"         => "1.6",
+      "v_node"        => "latest",
+      "v_tomcat"      => "7",
+      "v_subversion"  => "latest",
     }
   end
 
