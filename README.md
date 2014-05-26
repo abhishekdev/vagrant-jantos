@@ -12,6 +12,9 @@ Java Ant Node Tomcat Oracle Subversion on CentOS using [Vagrant](http://www.vagr
 	- JDK 6 update 45
 - Tomcat
 	- Tomcat 7.0.53
+- Ant
+	- Ant 1.6.5
+- Oracle: Express Edition 11g Release 2
 
 
 ## Requirements
@@ -22,6 +25,11 @@ Java Ant Node Tomcat Oracle Subversion on CentOS using [Vagrant](http://www.vagr
 	
 	- Download Sun Java JDK 6 ( update 45 ) from [here](http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR). Use the jdk-6u*-linux-x64-rpm.bin file.
 	- Put it in the folder `[projectroot]/install/java/` (Create directories if required)
+
+* If Oracle needs to be installed
+	
+	- Download Oracle XE 11g from [here](http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html). Use the oracle-xe-11.2.0-1.0.x86_64.rpm.zip file
+	- Put in `[projectroot]/install/oracle/` (Create directories if required)
 	
 * For Windows Hosts:
 	- Ensure that you have VirtualBox directory in your `%PATH%`. Usually `Program Files\Oracle\VirtualBox` for deafult installs
@@ -56,4 +64,4 @@ Username: vagrant
 - [x] Add Java Support
 - [x] Add Tomcat Support
 - [x] Add Ant Support
-- [ ] Add Oracle Support
+- [x] Add Oracle Support

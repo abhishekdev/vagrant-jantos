@@ -3,6 +3,8 @@
 # @date 14-May-2014
 
 node jantos{
+
+	# Ensure the /vagrant/bin and /vagrant/install directories are present
 	file{ ["$directory_install", "$directory_bin"]:
 		ensure => 'directory',
 	}
@@ -30,4 +32,10 @@ node jantos{
 	# -- Install Ant
 	Class['java::jdk6'] -> Class['apache::ant']
 	include apache::ant
+
+	# -- Install Oracle
+	Class["oracle::server"] -> Class["oracle::xe"]
+	include oracle::server
+	include oracle::xe
+	
 }

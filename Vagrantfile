@@ -26,6 +26,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 1521, host: 1521
+  config.vm.network "forwarded_port", guest: 15210, host: 15210
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -94,6 +96,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       "v_ant"         => "1.6",
       "v_node"        => "latest",
       "v_tomcat"      => "7",
+      "v_oracle"      => "11gXE",
       "v_subversion"  => "latest",
     }
   end
