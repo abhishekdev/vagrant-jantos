@@ -6,7 +6,7 @@
 
 class java::jdk6 {
 	
-	# Download Oracle Java JDK from here (current version is JDK 6 Update 45) and put in [Project Root]/tools/install/java/
+	# Download Oracle Java JDK from here (current version is JDK 6 Update 45) and put in [Project Root]/install/java/
 	# http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR.
 	# Note: Select rpm.bin package jdk-6u45-linux-x64-rpm.bin
 
