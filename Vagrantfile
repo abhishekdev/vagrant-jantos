@@ -62,7 +62,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Use VBoxManage to customize the VM. For example to change memory:
     vb.customize ["modifyvm", :id,
                   # Name to show in virtualbox
-                  "--name", "Jantos"]
+                  "--name", "Jantos"
+                  # Use 1024+ when using OracleXE (Oracle Database XE database uses cannot exceed 1 gigabyte, even if more is available.)
+                  # NOTE: Adjust accordingly if deployed applications need more memory
+                  "--memory", "1024"]
   end
 
   # Bootstrap basic environment using shell
