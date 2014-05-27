@@ -2,19 +2,17 @@ vagrant-jantos
 ==============
 
 Java Ant Node Tomcat Oracle Subversion on CentOS using [Vagrant](http://www.vagrantup.com) and headless VirtualBox
-> :exclamation: This is a work in progress
 
 
 ## Default Add-ons:
 - Subversion: latest (v1.8.9+)
 - Node.js: latest (v0.10.26+)
-- Java
-	- JDK 6 update 45
-- Tomcat
-	- Tomcat 7.0.53
-- Ant
-	- Ant 1.6.5
-- Oracle: Express Edition 11g Release 2
+- Java: JDK 6 update 45 :arrow_down:
+- Tomcat: 7.0.53
+- Ant: 1.6.5
+- Oracle: Express Edition 11g Release 2 :arrow_down:
+
+:arrow_down: : Requires manual download, see requirements section below
 
 
 ## Requirements
