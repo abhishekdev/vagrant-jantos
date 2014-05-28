@@ -1,7 +1,9 @@
-vagrant-jantos
-==============
 
-Java Ant Node Tomcat Oracle Subversion on CentOS using [Vagrant](http://www.vagrantup.com) and headless VirtualBox
+Jantos on CentOS using Vagrant
+==============================
+
+(Java Ant Node Tomcat Oracle Subversion) on CentOS using [Vagrant](http://www.vagrantup.com) and headless VirtualBox
+
 
 
 ## Default Add-ons:
@@ -30,7 +32,7 @@ Java Ant Node Tomcat Oracle Subversion on CentOS using [Vagrant](http://www.vagr
 	- Put in `[projectroot]/install/oracle/` (Create directories if required)
 	
 * For Windows Hosts:
-	- Ensure that you have VirtualBox directory in your `%PATH%`. Usually `Program Files\Oracle\VirtualBox` for deafult installs
+	- Ensure that you have VirtualBox directory in your `%PATH%`. Usually `Program Files\Oracle\VirtualBox` for default installations
 	- To use ssh on Windows OS, install ssh client like Cygwin, MinGW or Git, all of which contain an SSH client. Or use PuTTY SSH client the following authentication information:
 ```
 Host: 127.0.0.1
@@ -55,27 +57,28 @@ Username: vagrant
         vagrant up
 
 
-## How To Use
-#### Using the VM
+## How To
+
+### Use the VM
 - Connect to the new machine from the project root
 	
         vagrant ssh	
 
 - If required, password for `root` is `vagrant`
 
-#### Connecting to Oracle
+### Connect to Oracle
 Connect to Oracle using [SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html) at `localhost:1521/XE` as `system` with password `manager`. 
 e.g. if you have `sqlplus` installed on the host machine you may connect with:
 
          sqlplus system/manager@//localhost:1521/XE
 
-#### Using Tomcat
+### Use Tomcat
 - Connect to the machine using `vagrant ssh`
 - Startup Tomcat using the command `$CATALINA_HOME/bin/startup.sh`
 - Shutdown Tomcat using the command `$CATALINA_HOME/bin/shutdown.sh`
 
 
-## TODO:
+## TODO
 - [ ] Add support for JDK 7+
 - [ ] Automate setting up Tomcat SSL
 - [ ] Setup tomcat as a service OR a command
