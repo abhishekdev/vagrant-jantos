@@ -49,5 +49,12 @@ class apache::tomcat {
 		path => ["/bin"],
 		require => Exec["Install Tomcat"],
 	}
+
+	# unlock tomcat admin-gui. Default login credentials: admin/password
+	file { "${directory_bin}/tomcat/conf/tomcat-users.xml":
+	    ensure => "present",
+	    content => template('apache/tomcat-users.xml.erb'),
+	    require => Exec["Install Tomcat"],
+	}
 	
 }
