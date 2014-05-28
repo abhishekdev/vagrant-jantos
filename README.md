@@ -52,14 +52,31 @@ Username: vagrant
 
 * Boot the machine from project root.
 		
-		vagrant up
+        vagrant up
+
+
+## How To Use
+#### Using the VM
+- Connect to the new machine from the project root
+	
+        vagrant ssh	
+
+- If required, password for `root` is `vagrant`
+
+#### Connecting to Oracle
+Connect to Oracle using [SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html) at `localhost:1521/XE` as `system` with password `manager`. 
+e.g. if you have `sqlplus` installed on the host machine you may connect with:
+
+         sqlplus system/manager@//localhost:1521/XE
+
+#### Using Tomcat
+- Connect to the machine using `vagrant ssh`
+- Startup Tomcat using the command `$CATALINA_HOME/bin/startup.sh`
+- Shutdown Tomcat using the command `$CATALINA_HOME/bin/shutdown.sh`
 
 
 ## TODO:
-- [x] Host Vagrant box on a file Server
-- [x] Add SVN Support
-- [x] Add Node Support
-- [x] Add Java Support
-- [x] Add Tomcat Support
-- [x] Add Ant Support
-- [x] Add Oracle Support
+- [ ] Add support for JDK 7+
+- [ ] Automate setting up Tomcat SSL
+- [ ] Setup tomcat as a service OR a command
+- [ ] Parametrize credentials for Oracle/Tomcat Admin
