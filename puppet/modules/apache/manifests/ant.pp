@@ -8,7 +8,7 @@ class apache::ant {
 		'1.6' => "apache-ant-1.6.5", 
 		'1.7' => "apache-ant-1.2.1", 
 		'1.8' => "apache-ant-1.8.4", 
-		'1.9' => "apache-ant-1.9.4", 
+		'1.9' => "apache-ant-1.9.5", 
 		'default' => 'NA',
 	}
 
