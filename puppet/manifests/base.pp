@@ -19,6 +19,9 @@ node jantos{
 	# -- Install SVN
 	include subversion::client
 
+	# -- Update git
+	include git::client
+
 	# -- Install Node.js
 	include nodejs::platform
 
