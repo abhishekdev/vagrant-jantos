@@ -14,7 +14,7 @@ class nodejs::platform {
 	package { "epel-release":
 	  ensure => '6-8',
 	  provider => 'rpm',
-	  source => 'http://download-i2.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm',
+	  source => 'http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm',
 	  before => Package["nodejs"],
 	}
 
