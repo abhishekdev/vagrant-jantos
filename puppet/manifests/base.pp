@@ -16,6 +16,9 @@ node jantos{
 		hasstatus => true,
 	}
 
+	# -- Update time zone
+	include timezone::custom
+
 	# -- Install SVN
 	include subversion::client
 

@@ -89,8 +89,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       "directory_bin"       => "/vagrant/bin",
       "directory_install"   => "/vagrant/install",
 
-      # Set package versions. Some packages use OS package managers, 
-      # while some are configures manually. Supported version values 
+      # Set timezone
+      # Sample:  US/Eastern, EST5EDT, Asia/Calcutta, America/Los_Angeles
+      "timezone" => 'UTC',
+
+      # Set package versions. Some packages use OS package managers,
+      # while some are configured manually. Supported version values
       # for packages which do not use OS package managers are listed below:
       #  - Java [6] You may enable it in ./puppet/manifests/base.pp
       #  - Java [7, 8]
