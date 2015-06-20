@@ -8,10 +8,10 @@ Jantos on CentOS using Vagrant
 
 ## Default Add-ons:
 - Subversion: latest (v1.8.9+)
-- Node.js: latest (v0.10.26+)
-- Java: JDK 8 update 45 :arrow_down:
+- Node.js: v0.12.4
+- Java: JDK 8 update 45
 - Tomcat: 7.0.53
-- Ant: 1.6.5
+- Ant: 1.9.5
 - Oracle: Express Edition 11g Release 2 :arrow_down:
 
 :arrow_down: : Requires manual download, see requirements section below
