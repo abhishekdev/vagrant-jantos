@@ -79,6 +79,5 @@ e.g. if you have `sqlplus` installed on the host machine you may connect with:
 
 
 ## TODO
-- [ ] Automate setting up Tomcat SSL
 - [ ] Setup tomcat as a service OR a command
 - [ ] Parametrize credentials for Oracle/Tomcat Admin

@@ -56,5 +56,18 @@ class apache::tomcat {
 	    content => template('apache/tomcat-users.xml.erb'),
 	    require => Exec["Install Tomcat"],
 	}
-	
+
+	# copy keystore to bin
+	file { "${directory_bin}/.keystore":
+	    ensure => "present",
+	    content => template('apache/keystore'),
+	}
+
+	# enable SSL on tomcat
+	file { "${directory_bin}/tomcat/conf/server.xml":
+	    ensure => "present",
+	    content => template('apache/server.xml.erb'),
+	    require => Exec["Install Tomcat"],
+	}
+
 }
