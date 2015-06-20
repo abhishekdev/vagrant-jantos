@@ -6,26 +6,17 @@
 
 class nodejs::platform {
 
-	exec { "Import EPEL Key":
-		command => '/bin/rpm --import https://fedoraproject.org/static/0608B895.txt',
-		before => Package["epel-release"],
+	exec { "Fetch Nodejs Installer":
+		command => "/usr/bin/wget -c http://nodejs.org/dist/v${v_node}/node-v${v_node}-linux-x64.tar.gz -O ${directory_install}/nodejs/node-v${v_node}-linux-x64.tar.gz",
+		path => "/bin",
+	    creates => "${directory_install}/nodejs/node-v${v_node}-linux-x64.tar.gz",
 	}
 
-	package { "epel-release":
-	  ensure => '6-8',
-	  provider => 'rpm',
-	  source => 'http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm',
-	  before => Package["nodejs"],
-	}
-
-	package { "nodejs":
-		ensure => $v_node,
-	}
-
-	package { "npm":
-		ensure => 'present',
-		install_options => ['--enablerepo=epel'],
-		require => Package['nodejs'],
+	exec { "Install Nodejs":
+		command => "tar --strip-components 1 -xzvf node-v${v_node}-linux-x64.tar.gz -C /usr/local",
+		cwd => "${directory_install}/nodejs/",
+		path => ["/bin"],
+		require => Exec["Fetch Nodejs Installer"],
 	}
 
 }

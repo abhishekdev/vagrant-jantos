@@ -100,9 +100,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       #  - Java [7, 8]
       #  - Ant [1.6, 1.7, 1.8, 1.9]
       #  - Tomcat [7, 8]
-      "v_ant"         => "1.6",
-      "v_node"        => "latest",
       "v_jdk"         => "8",
+      "v_ant"         => "1.9",
+      "v_node"        => "0.12.4",
       "v_tomcat"      => "7",
       "v_oracle"      => "11gXE",
       "v_subversion"  => "latest",
