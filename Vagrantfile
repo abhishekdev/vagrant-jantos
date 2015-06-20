@@ -92,12 +92,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       # Set package versions. Some packages use OS package managers, 
       # while some are configures manually. Supported version values 
       # for packages which do not use OS package managers are listed below:
-      #  - Java [6] 
+      #  - Java [6] You may enable it in ./puppet/manifests/base.pp
+      #  - Java [7, 8]
       #  - Ant [1.6, 1.7, 1.8, 1.9]
       #  - Tomcat [7, 8]
-      "v_jdk"         => "6",  
       "v_ant"         => "1.6",
       "v_node"        => "latest",
+      "v_jdk"         => "8",
       "v_tomcat"      => "7",
       "v_oracle"      => "11gXE",
       "v_subversion"  => "latest",

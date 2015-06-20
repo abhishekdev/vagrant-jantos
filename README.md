@@ -9,7 +9,7 @@ Jantos on CentOS using Vagrant
 ## Default Add-ons:
 - Subversion: latest (v1.8.9+)
 - Node.js: latest (v0.10.26+)
-- Java: JDK 6 update 45 :arrow_down:
+- Java: JDK 8 update 45 :arrow_down:
 - Tomcat: 7.0.53
 - Ant: 1.6.5
 - Oracle: Express Edition 11g Release 2 :arrow_down:
@@ -79,7 +79,6 @@ e.g. if you have `sqlplus` installed on the host machine you may connect with:
 
 
 ## TODO
-- [ ] Add support for JDK 7+
 - [ ] Automate setting up Tomcat SSL
 - [ ] Setup tomcat as a service OR a command
 - [ ] Parametrize credentials for Oracle/Tomcat Admin
