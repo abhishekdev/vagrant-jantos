@@ -6,9 +6,15 @@
 
 class nodejs::platform {
 
+	file { "${directory_install}/nodejs":
+		ensure => "directory",
+		before => Exec["Fetch Nodejs Installer"],
+	}
+
 	exec { "Fetch Nodejs Installer":
-		command => "/usr/bin/wget -c http://nodejs.org/dist/v${v_node}/node-v${v_node}-linux-x64.tar.gz -O ${directory_install}/nodejs/node-v${v_node}-linux-x64.tar.gz",
+		command => "/usr/bin/wget -c http://nodejs.org/dist/v${v_node}/node-v${v_node}-linux-x64.tar.gz",
 		path => "/bin",
+		cwd => "${directory_install}/nodejs/",
 	    creates => "${directory_install}/nodejs/node-v${v_node}-linux-x64.tar.gz",
 	}
 
