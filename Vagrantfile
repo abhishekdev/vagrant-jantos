@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "abhishekdev/centos-65-x64-puppet"
+  config.vm.box = "abhishekdev/centos-6-x64-puppet"
   config.vm.hostname = "jantos.example.com"
 
   # Disable automatic box update checking. If you disable this, then
