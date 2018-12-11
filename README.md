@@ -8,8 +8,8 @@ Jantos on CentOS using Vagrant
 
 ## Default Add-ons:
 - Subversion: latest (v1.8.9+)
-- Node.js: v0.12.4
-- Java: JDK 8 update 45
+- NodeJs: 8.9.3 LTS
+- Java: OpenJDK 8
 - Tomcat: 7.0.53
 - Ant: 1.9.5
 - Oracle: Express Edition 11g Release 2 :arrow_down:
@@ -21,7 +21,7 @@ Jantos on CentOS using Vagrant
 * Install VirtualBox from [virtualbox.org](https://www.virtualbox.org)
 * Install Vagrant from [vagrantup.com](http://www.vagrantup.com)
 * An internet connection is required to provision the box for the first time
-* If JDK6 needs to be installed
+* If Oracle JDK6 needs to be installed
 	
 	- Download Sun Java JDK 6 ( update 45 ) from [here](http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR). Use the jdk-6u*-linux-x64-rpm.bin file.
 	- Put it in the folder `[projectroot]/install/java/` (Create directories if required)

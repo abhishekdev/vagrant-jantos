@@ -4,10 +4,11 @@
 ## @author: Abhishek Dev
 ## @date: 14-May-2014
 
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-VAGRANTFILE_API_VERSION = "2"
-
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
@@ -100,11 +101,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       # for packages which do not use OS package managers are listed below:
       #  - Java [6] You may enable it in ./puppet/manifests/base.pp
       #  - Java [7, 8]
+      #  - OpenJDK [6,7,8]
       #  - Ant [1.6, 1.7, 1.8, 1.9]
       #  - Tomcat [7, 8]
       "v_jdk"         => "8",
       "v_ant"         => "1.9",
-      "v_node"        => "6.7.0",
+      "v_node"        => "8.9.3",
       "v_tomcat"      => "7",
       "v_oracle"      => "11gXE",
       "v_subversion"  => "latest",
