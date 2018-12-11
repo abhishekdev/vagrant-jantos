@@ -28,20 +28,23 @@ node jantos{
 	# -- Install Node.js
 	include nodejs::platform
 
-	# -- Install JDK6
+	# -- Install Oracle JDK6
 	# Uncomment the following line to install JDK 6
 	# Class['java::jdk6'] -> Class['java::jdk']
 	# include java::jdk6
 
-	# -- Install JDK7+
-	include java::jdk
+	# -- Install Oracle JDK7+
+	# include java::jdk
+
+	# -- Install OpenJDK
+	include java::openjdk
 
 	# -- Install Tomcat
-	Class['java::jdk'] -> Class['apache::tomcat']
+	Class['java::openjdk'] -> Class['apache::tomcat']
 	include apache::tomcat
 
 	# -- Install Ant
-	Class['java::jdk'] -> Class['apache::ant']
+	Class['java::openjdk'] -> Class['apache::ant']
 	include apache::ant
 
 	# -- Install Oracle

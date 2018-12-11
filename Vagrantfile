@@ -101,6 +101,7 @@ Vagrant.configure("2") do |config|
       # for packages which do not use OS package managers are listed below:
       #  - Java [6] You may enable it in ./puppet/manifests/base.pp
       #  - Java [7, 8]
+      #  - OpenJDK [6,7,8]
       #  - Ant [1.6, 1.7, 1.8, 1.9]
       #  - Tomcat [7, 8]
       "v_jdk"         => "8",
